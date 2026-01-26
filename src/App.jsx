@@ -1,3 +1,5 @@
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+
 import { useState } from 'react';
 import reactLogo from './assets/react.svg';
 import viteLogo from '/vite.svg';
@@ -12,8 +14,12 @@ function App() {
     <>
       <div>
         <h1>Hello</h1>
-        <TaskForm />
-        <TaskList />
+        <BrowserRouter>
+          <Routes>
+            <Route path='/' element={<TaskList />}/>
+            <Route path='/create-task' element={<TaskForm />}/> 
+          </Routes>     
+        </BrowserRouter>
       </div>
     </>
   );
